@@ -1,7 +1,7 @@
-# FastAPI Technical Assessment Boilerplate
+# Hypervisor-like Service for MLOps Platform
 
 ## Overview
-This is a comprehensive FastAPI technical assessment boilerplate designed to evaluate backend system design, scalability, and software engineering skills. The project implements a cluster management system with user authentication, organization management, and deployment scheduling.
+This is a FastAPI technical assessment boilerplate designed to evaluate backend system design, scalability, and software engineering skills. The project implements a cluster management system with user authentication, organization management, and deployment scheduling.
 
 ## Tech Stack
 - Python 3.11
@@ -113,9 +113,6 @@ Run the tests using pytest:
 ```bash
 pytest
 ```
-
-## Assessment Duration
-Expected completion time: 4-5 hours
 
 ## Evaluation Criteria
 1. Code quality and organization

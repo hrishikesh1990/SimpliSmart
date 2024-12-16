@@ -1,11 +1,8 @@
-from typing import Generator
-from fastapi import Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer
+from typing import Generator, Optional
+from fastapi import Depends, HTTPException, status, Request
 from sqlalchemy.orm import Session
 from app.db.session import SessionLocal
 from app.models.user import User
-
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="api/v1/auth/login")
 
 def get_db() -> Generator:
     db = SessionLocal()
@@ -15,10 +12,24 @@ def get_db() -> Generator:
         db.close()
 
 async def get_current_user(
-    db: Session = Depends(get_db),
-    token: str = Depends(oauth2_scheme)
-) -> User:
+    request: Request,
+    db: Session = Depends(get_db)
+) -> Optional[User]:
     """
-    TODO: Implement current user validation from JWT token
+    TODO: Implement current user validation from session
+    Example:
+    user_id = request.session.get("user_id")
+    if not user_id:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Not authenticated"
+        )
+    user = db.query(User).filter(User.id == user_id).first()
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="User not found"
+        )
+    return user
     """
     pass

@@ -12,10 +12,10 @@ class Settings(BaseSettings):
     POSTGRES_DB: str = os.getenv("PGDATABASE", "cluster_management")
     POSTGRES_PORT: str = os.getenv("PGPORT", "5432")
     
-    # JWT configuration
+    # Session configuration
     SECRET_KEY: str = "TODO_CHANGE_THIS_SECRET_KEY"  # TODO: Change in production
-    ALGORITHM: str = "HS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
+    SESSION_COOKIE_NAME: str = "session"
+    SESSION_MAX_AGE: int = 1800  # 30 minutes in seconds
     
     # Database URL
     DATABASE_URL: str = os.getenv(
