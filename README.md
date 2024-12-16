@@ -1,4 +1,4 @@
-# Technical Assessment: Cluster Management System
+# Hypervisor-like Service for MLOps Platform
 
 ## Overview
 This is a FastAPI-based technical assessment designed to evaluate backend system design and implementation skills. The project implements a cluster management system with session-based authentication, organization management, and deployment scheduling.
@@ -14,7 +14,7 @@ This is a FastAPI-based technical assessment designed to evaluate backend system
 - Role-Based Access Control (RBAC)
 
 ## Time Limit
-You have 4-5 hours to complete this assessment. Focus on implementing the core functionality in the following order:
+Focus on implementing the core functionality in the following order:
 1. Authentication system
 2. Organization management
 3. Basic cluster operations
@@ -163,3 +163,7 @@ pytest
 - Use appropriate error handling throughout
 - Document your design decisions
 - Consider edge cases in your implementation
+
+## Bonus
+- Implement a more advanced authentication mechanism (e.g., JWT).
+- Add RBAC for Admin, Developer, and Viewer.
