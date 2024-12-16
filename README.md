@@ -3,55 +3,6 @@
 ## Overview
 This is a FastAPI-based technical assessment designed to evaluate backend system design and implementation skills. The project implements a cluster management system with session-based authentication, organization management, and deployment scheduling.
 
-## Tech Stack
-- Python 3.11
-- FastAPI web framework
-- SQLAlchemy ORM
-- PostgreSQL database
-- Pydantic for data validation
-- Pytest for testing
-- Session-based authentication
-- Role-Based Access Control (RBAC)
-
-## Time Limit
-Focus on implementing the core functionality in the following order:
-1. Authentication system
-2. Organization management
-3. Basic cluster operations
-4. Deployment scheduling
-
-## Getting Started
-
-### Prerequisites
-- Python 3.11+
-- PostgreSQL database
-
-### Setup Instructions
-1. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-2. Set up environment variables:
-```bash
-# Database Configuration
-DATABASE_URL=postgresql://user:password@localhost:5432/dbname
-
-# Session Configuration
-SECRET_KEY=your-secret-key  # For secure session encryption
-SESSION_COOKIE_NAME=session  # Cookie name for the session
-SESSION_MAX_AGE=1800        # Session duration in seconds (30 minutes)
-```
-
-3. Run the application:
-```bash
-uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
-```
-
-4. Access the API documentation:
-- Swagger UI: http://localhost:8000/docs
-- ReDoc: http://localhost:8000/redoc
-
 ## Assessment Tasks
 
 ### 1. User Authentication and Organization Management
@@ -158,12 +109,40 @@ pytest
 - Code comments
 - README completeness
 
+## Getting Started
+
+### Prerequisites
+- Python 3.11+
+- PostgreSQL database
+
+### Setup Instructions
+1. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+2. Set up environment variables:
+```bash
+# Database Configuration
+DATABASE_URL=postgresql://user:password@localhost:5432/dbname
+
+# Session Configuration
+SECRET_KEY=your-secret-key  # For secure session encryption
+SESSION_COOKIE_NAME=session  # Cookie name for the session
+SESSION_MAX_AGE=1800        # Session duration in seconds (30 minutes)
+```
+
+3. Run the application:
+```bash
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+4. Access the API documentation:
+- Swagger UI: http://localhost:8000/docs
+- ReDoc: http://localhost:8000/redoc
+
 ## Notes
 - Focus on implementing core features first
 - Use appropriate error handling throughout
 - Document your design decisions
 - Consider edge cases in your implementation
-
-## Bonus
-- Implement a more advanced authentication mechanism (e.g., JWT).
-- Add RBAC for Admin, Developer, and Viewer.
