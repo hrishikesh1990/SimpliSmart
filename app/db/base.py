@@ -1,9 +1,8 @@
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import declared_attr
+# Import base classes for SQLAlchemy
+from app.db.base_class import Base
 
-class CustomBase:
-    @declared_attr
-    def __tablename__(cls):
-        return cls.__name__.lower()
-
-Base = declarative_base(cls=CustomBase)
+# Import all models here for Alembic
+from app.models.user import User  # noqa
+from app.models.organization import Organization  # noqa
+from app.models.cluster import Cluster  # noqa
+from app.models.deployment import Deployment  # noqa
