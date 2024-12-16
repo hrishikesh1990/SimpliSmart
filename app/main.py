@@ -17,17 +17,36 @@ app = FastAPI(
     
     ## Features
     
-    * **Users & Authentication** - Register, login, and manage user accounts
+    * **Users & Authentication** - Register, login, and manage user sessions
     * **Organizations** - Create and join organizations using invite codes
     * **Clusters** - Manage compute clusters with resource limits
     * **Deployments** - Schedule and manage deployments with priority queuing
     
     ## Authentication
     
-    All API endpoints except registration and login require JWT authentication.
-    Include the JWT token in the Authorization header:
+    The API uses session-based authentication. To access protected endpoints:
+    1. Register a new user account (`POST /api/v1/auth/register`)
+    2. Login with your credentials (`POST /api/v1/auth/login`)
+    3. The server will set a session cookie automatically
+    4. Use this cookie for all subsequent requests
+    5. Logout when finished (`POST /api/v1/auth/logout`)
     
-    `Authorization: Bearer <your_token>`
+    ## Organizations
+    After authentication, users can:
+    1. Create a new organization (generates an invite code)
+    2. Join an existing organization using an invite code
+    3. Access their organization's clusters and deployments
+    
+    ## Resource Management
+    The system tracks and manages three types of resources:
+    - CPU (in cores)
+    - RAM (in GB)
+    - GPU (in units)
+    
+    Deployments are scheduled based on:
+    1. Available resources in the cluster
+    2. Deployment priority
+    3. Resource requirements
     """,
     version="1.0.0",
     openapi_tags=[

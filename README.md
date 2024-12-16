@@ -1,7 +1,11 @@
-# Hypervisor-like Service for MLOps Platform
+# MLOps Platform Technical Assessment
 
 ## Overview
-This is a FastAPI technical assessment boilerplate designed to evaluate backend system design, scalability, and software engineering skills. The project implements a cluster management system with user authentication, organization management, and deployment scheduling.
+This technical assessment evaluates your backend development skills through implementing a cluster management system. The boilerplate provides a foundation with TODO markers for key functionality, allowing you to demonstrate your understanding of:
+- Session-based authentication and user management
+- Organization management with invite system
+- Resource allocation and scheduling algorithms
+- API design and implementation
 
 ## Tech Stack
 - Python 3.11
@@ -10,8 +14,15 @@ This is a FastAPI technical assessment boilerplate designed to evaluate backend 
 - PostgreSQL database
 - Pydantic for data validation
 - Pytest for testing
-- JWT authentication
+- Session-based authentication
 - Role-Based Access Control (RBAC)
+
+## Time Limit
+You have 4-5 hours to complete this assessment. Focus on core functionality first:
+1. Authentication system
+2. Organization management
+3. Basic cluster operations
+4. Simple deployment scheduling
 
 ## Getting Started
 
@@ -30,8 +41,8 @@ pip install -r requirements.txt
 # Database Configuration
 DATABASE_URL=postgresql://user:password@localhost:5432/dbname
 
-# JWT Configuration
-SECRET_KEY=your-secret-key
+# Session Configuration
+SECRET_KEY=your-secret-key  # Used for session encryption
 ```
 
 3. Run the application:
@@ -46,27 +57,53 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ## Assessment Tasks
 
 ### 1. User Authentication and Organization Management
-- [ ] Implement JWT token creation and validation
-- [ ] Complete user registration and login endpoints
-- [ ] Implement organization creation with invite codes
-- [ ] Add organization join functionality
+- [ ] Implement session-based authentication (login/logout)
+- [ ] Complete user registration with password hashing
+- [ ] Add organization creation with random invite codes
+- [ ] Implement organization join functionality via invite codes
 
 ### 2. Cluster Management
-- [ ] Implement cluster creation with resource limits
-- [ ] Add resource tracking functionality
-- [ ] Implement cluster listing for organization members
+- [ ] Create clusters with resource limits (CPU, RAM, GPU)
+- [ ] Track available resources
+- [ ] List clusters for organization members
+- [ ] Validate resource availability
 
 ### 3. Deployment Management
-- [ ] Implement deployment creation endpoint
-- [ ] Add resource allocation logic
-- [ ] Implement deployment queue system
-- [ ] Create scheduling algorithm based on priority and resources
+- [ ] Create deployments with resource requirements
+- [ ] Implement basic scheduling algorithm
+- [ ] Track deployment status
+- [ ] Handle resource allocation/deallocation
 
-### 4. Advanced Features
-- [ ] Implement Role-Based Access Control (RBAC)
-- [ ] Add rate limiting
-- [ ] Implement comprehensive test coverage
-- [ ] Add API documentation
+### 4. Advanced Features (Optional)
+- [ ] Add Role-Based Access Control (RBAC)
+- [ ] Implement rate limiting
+- [ ] Add comprehensive test coverage
+- [ ] Enhance API documentation
+
+## Evaluation Criteria
+1. **Code Quality (40%)**
+   - Clean, readable, and well-organized code
+   - Proper error handling
+   - Effective use of FastAPI features
+   - Type hints and validation
+
+2. **System Design (30%)**
+   - Authentication implementation
+   - Resource management approach
+   - Scheduling algorithm design
+   - API structure and organization
+
+3. **Functionality (20%)**
+   - Working authentication system
+   - Proper resource tracking
+   - Successful deployment scheduling
+   - Correct error responses
+
+4. **Testing & Documentation (10%)**
+   - Test coverage
+   - API documentation
+   - Code comments
+   - README updates
 
 ## Project Structure
 ```
