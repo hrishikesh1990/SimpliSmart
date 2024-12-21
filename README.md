@@ -18,12 +18,14 @@ This is a FastAPI-based technical assessment designed to evaluate backend system
 - [ ] Validate resource constraints
 
 ### 3. Deployment Management
+- [ ] Develop a preemption-based scheduling algorithm to prioritize high-priority deployments
 - [ ] Create deployment endpoints with resource requirements
 - [ ] Implement basic scheduling algorithm
 - [ ] Add deployment status tracking
 - [ ] Handle resource allocation/deallocation
 
 ### 4. Advanced Features (Optional)
+- [ ] Add support for deployment dependency management (e.g., Deployment A must complete before Deployment B starts)
 - [ ] Implement Role-Based Access Control (RBAC)
 - [ ] Add rate limiting
 - [ ] Create comprehensive test coverage
